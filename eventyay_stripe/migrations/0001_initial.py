@@ -7,7 +7,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('pretixbase', '0001_initial'),
+        ('base', '0001_initial'),
     ]
 
     operations = [
@@ -24,8 +24,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False)),
                 ('reference', models.CharField(db_index=True, max_length=190, unique=True)),
-                ('order', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='pretixbase.order')),
-                ('payment', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='pretixbase.orderpayment')),
+                ('order', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='base.order')),
+                ('payment', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='base.orderpayment')),
             ],
         ),
     ]
